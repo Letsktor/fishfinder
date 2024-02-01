@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+
+
+        <ImageView
+            android:id="@+id/imgButtonHumuHumu"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="4dp"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imgButtonBetta"
+            app:layout_constraintTop_toBottomOf="@+id/imgButtonBetta"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imgButtonBetta"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="88dp"
+            android:adjustViewBounds="true"
+            android:background="@color/white"
+            android:cropToPadding="false"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:tooltipText="BETTA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#68000000"
+            android:backgroundTint="#000000"
+            android:text="Salt Water Spieces"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgButtonHumuHumu"
+            app:layout_constraintEnd_toEndOf="@+id/imgButtonHumuHumu"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imgButtonHumuHumu"
+            app:layout_constraintTop_toTopOf="@+id/imgButtonHumuHumu"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imgleft1"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:src="@drawable/baseline_keyboard_arrow_right_24"
+            app:layout_constraintBottom_toBottomOf="@+id/imgButtonHumuHumu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView2"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#68000000"
+            android:backgroundTint="#000000"
+            android:text="Fresh Water Spices"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgButtonBetta"
+            app:layout_constraintEnd_toEndOf="@+id/imgButtonBetta"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imgButtonBetta"
+            app:layout_constraintTop_toTopOf="@+id/imgButtonBetta"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <ImageView
+            android:id="@+id/imgleft2"
+            android:layout_width="40dp"
+            android:layout_height="0dp"
+            android:src="@drawable/baseline_keyboard_arrow_right_24"
+            app:layout_constraintBottom_toBottomOf="@+id/textView"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchView"
+            android:layout_width="344dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="4dp"
+            android:accessibilityLiveRegion="none"
+            android:addStatesFromChildren="false"
+            android:alwaysDrawnWithCache="false"
+            android:background="@drawable/serch_view_bg"
+            app:defaultQueryHint="Search by Common Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgPicButton"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/baseline_photo_camera_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/searchView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

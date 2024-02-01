@@ -1,0 +1,67 @@
+package hu.undieb.fishfinder;
+
+import static android.content.ContentValues.TAG;
+
+import android.content.Context;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
+import java.util.ArrayList;
+
+public class FishRecViewAdapter extends RecyclerView.Adapter<FishRecViewAdapter.ViewHolder> {
+    private ArrayList<Fish> fishes= new ArrayList<>();
+    private Context mContext;
+    private String parentActivity;
+
+    public FishRecViewAdapter(Context mContext, String parentActivity){
+        this.mContext=mContext;
+        this.parentActivity=parentActivity;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_fish,parent,false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Log.d(TAG,"onBindViewHolder:called");
+        holder.txtName.setText(fishes.get(position).getName());
+        String img= fishes.get(position).getUrls().get(0);
+        Glide.with(mContext).asBitmap().load(img).into(holder.imgFish);
+    }
+
+    @Override
+    public int getItemCount() {
+        return fishes.size();
+    }
+
+    public void setFishes(ArrayList<Fish> fishes) {
+        this.fishes = fishes;
+        notifyDataSetChanged();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        private CardView parent;
+        private ImageView imgFish;
+        private TextView txtName;
+        public ViewHolder(@NonNull View itemView){
+         super(itemView);
+            parent=itemView.findViewById(R.id.parent);
+            imgFish=itemView.findViewById(R.id.imgFish);
+            txtName=itemView.findViewById(R.id.FishName);
+        }
+    }
+}
