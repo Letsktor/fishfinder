@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 public class FreshWater extends AppCompatActivity {
     private RecyclerView fishesRecView;
     private FishRecViewAdapter adapter;
@@ -19,6 +22,6 @@ public class FreshWater extends AppCompatActivity {
         fishesRecView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        adapter.setFishes(Utils.getInstance().getAllFish());
+        adapter.setFishes((ArrayList<Fish>) Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType()==WaterType.FRESHWATER).collect(Collectors.toList()));
     }
 }

@@ -1,13 +1,16 @@
 package hu.undieb.fishfinder;
 import java.util.ArrayList;
+import java.util.List;
+
 public class Utils {
     private static Utils instance;
     private static ArrayList<Fish> allFish;
     private Utils(){
         if(null==allFish){
-            allFish=new ArrayList<>();
+            allFish= new ArrayList<>();
             initData();
         }
+
     }
     private void initData(){
         ArrayList<Fish> fishes=new ArrayList<>();
@@ -37,4 +40,5 @@ public class Utils {
 
         return null;
     }
+
 }
