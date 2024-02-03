@@ -1,10 +1,11 @@
 package hu.undieb.fishfinder;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Utils {
     private static Utils instance;
-    private static ArrayList<Fish> allFish;
+    private ArrayList<Fish> allFish;
     private Utils(){
         if(null==allFish){
             allFish= new ArrayList<>();
@@ -31,9 +32,10 @@ public class Utils {
         }
 
     }
-    public static ArrayList<Fish> getAllFish() {
+    public ArrayList<Fish> getAllFish() {
         return allFish;
     }
+
     public Fish getFishById(int id){
         for(Fish b: allFish){
             if(b.getId()==id){
