@@ -37,7 +37,7 @@ public class FreshWater extends AppCompatActivity {
             }
         });
         searchView.clearFocus();
-        adapter=new FishRecViewAdapter(this,"FreshWater");
+        adapter=new FishRecViewAdapter(this);
         fishesRecView.setAdapter(adapter);
         fishesRecView.setLayoutManager(new LinearLayoutManager(this));
 

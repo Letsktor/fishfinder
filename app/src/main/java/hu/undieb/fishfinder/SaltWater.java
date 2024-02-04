@@ -19,7 +19,7 @@ public class SaltWater extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salt_water);
         fishesRecView=findViewById(R.id.fishesRecView);
-        adapter=new FishRecViewAdapter(this,"SaltWater");
+        adapter=new FishRecViewAdapter(this);
         fishesRecView.setAdapter(adapter);
         fishesRecView.setLayoutManager(new LinearLayoutManager(this));
         searchView=findViewById(R.id.searchView);

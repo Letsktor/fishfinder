@@ -23,9 +23,8 @@ public class FishRecViewAdapter extends RecyclerView.Adapter<FishRecViewAdapter.
     private Context mContext;
     private String parentActivity;
 
-    public FishRecViewAdapter(Context mContext, String parentActivity){
+    public FishRecViewAdapter(Context mContext){
         this.mContext=mContext;
-        this.parentActivity=parentActivity;
     }
 
     @NonNull
