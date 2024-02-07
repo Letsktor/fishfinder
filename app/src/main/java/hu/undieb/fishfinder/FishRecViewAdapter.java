@@ -2,7 +2,10 @@ package hu.undieb.fishfinder;
 
 import static android.content.ContentValues.TAG;
 
+import static hu.undieb.fishfinder.FishView.FISH_ID_KEY;
+
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,7 +24,6 @@ import java.util.ArrayList;
 public class FishRecViewAdapter extends RecyclerView.Adapter<FishRecViewAdapter.ViewHolder> {
     private ArrayList<Fish> fishes= new ArrayList<>();
     private Context mContext;
-    private String parentActivity;
 
     public FishRecViewAdapter(Context mContext){
         this.mContext=mContext;
@@ -40,6 +42,15 @@ public class FishRecViewAdapter extends RecyclerView.Adapter<FishRecViewAdapter.
         holder.txtName.setText(fishes.get(position).getName());
         String img= fishes.get(position).getUrls().get(0);
         Glide.with(mContext).asBitmap().load(img).into(holder.imgFish);
+        holder.parent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(mContext,FishView.class);
+                intent.putExtra(FISH_ID_KEY,fishes.get(position).getId());
+                mContext.startActivity(intent);
+            }
+        });
+
     }
 
     @Override

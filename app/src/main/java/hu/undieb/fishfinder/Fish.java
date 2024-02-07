@@ -1,7 +1,10 @@
 package hu.undieb.fishfinder;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
- enum WaterType{
+import java.util.List;
+
+enum WaterType{
      FRESHWATER,
      SALTWATER
  }

@@ -12,6 +12,7 @@ public class YourFishes extends Fragment {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            getActivity().setTitle("Your Fishes");
             return inflater.inflate(R.layout.fragment_your_fishes,container,false);
         }
 }

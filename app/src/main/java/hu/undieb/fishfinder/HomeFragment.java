@@ -25,11 +25,11 @@ public class HomeFragment extends Fragment {
     private FishRecViewAdapter adapter;
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState)
 {
     View outView=inflater.inflate(R.layout.fragment_home,container,false);
+    getActivity().setTitle("Home");
     CardView cardView;
     CardView cardView2;
     ImageView imageViewBetta;

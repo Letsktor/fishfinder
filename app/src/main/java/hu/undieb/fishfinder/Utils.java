@@ -14,9 +14,10 @@ public class Utils {
 
     }
     private void initData(){
-        ArrayList<Fish> fishes=new ArrayList<>();
         ArrayList<String> urls=new ArrayList<>();
         urls.add("https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcRaz7PZmGVxPShJfAaCzCtoWD45eYkhA8ATd1zGUaVzV4FMl0sMl4DBOjGqJdv8QG9H");
+        urls.add("https://greenaqua.hu/media/catalog/product/cache/a9f5b46441c9caeb48dbb3f5b899a840/8/8/888321.jpg");
+        urls.add("https://www.thesprucepets.com/thmb/7YGQUU_FYAd2XCNmnW_9_jKcDZU=/5762x0/filters:no_upscale():strip_icc()/siamese-fighting-fish-bettas-1378308-hero-f459084da1414308accde7e21001906c.jpg");
         allFish.add(new Fish(1,"Betta","Betta splendens",urls,WaterType.FRESHWATER,"This is fookin betta bitch what do u want?"));
         urls=new ArrayList<>();
         urls.add("https://www.waikikiaquarium.org/wp-content/uploads/2013/11/reef-triggerfish_620.jpg");
