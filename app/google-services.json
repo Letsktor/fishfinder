@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "66024373445",
+    "project_id": "fishfinder-e4d0d",
+    "storage_bucket": "fishfinder-e4d0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:66024373445:android:3009421998baa9480784ac",
+        "android_client_info": {
+          "package_name": "hu.unideb.fishfinder"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPHJOkKvKGP_Q-VQibxOTgrGYXuhK_1Oc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
