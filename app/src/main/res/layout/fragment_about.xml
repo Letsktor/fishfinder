@@ -6,11 +6,24 @@
     tools:context=".FragmentAbout">
 
     <TextView
+        android:id="@+id/textView6"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="411dp"
+        android:layout_margin="20dp"
         android:layout_centerInParent="true"
-        android:text="About"
-        android:textColor="@color/purple"
-        android:textSize="30sp" />
+        android:textAlignment="center"
+        android:text="This is my first Android app, now 'usable' by the public. It was created because I wanted to combine my two interests: programming and learning about animals, especially fish. I hope you will find as much enjoyment using the program as I did developing it. Another simple reason it was born is the simple fact that I needed a project to showcase at University."
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="288dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView6"
+        android:layout_alignStart="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6"
+        android:textAlignment="center"
+        android:layout_centerHorizontal="true"
+        android:text="Developed by Máté Vajas, a.k.a. Letsktor." />
 
 </RelativeLayout>
