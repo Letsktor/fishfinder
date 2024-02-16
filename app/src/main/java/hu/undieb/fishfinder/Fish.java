@@ -3,13 +3,10 @@ package hu.undieb.fishfinder;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
-
-enum WaterType{
-     FRESHWATER,
-     SALTWATER
- }
+import com.google.firebase.database.IgnoreExtraProperties;
+@IgnoreExtraProperties
 public class Fish {
-    public Fish(int id,String name,String scientificName,ArrayList<String> urls,WaterType waterType,String description,float size, float requiredTankSize) {
+    public Fish(int id,String name,String scientificName,ArrayList<String> urls,String waterType,String description,float size, float requiredTankSize) {
         this.id = id;
         this.name = name;
         this.scientificName = scientificName;
@@ -18,6 +15,10 @@ public class Fish {
         this.description = description;
         this.size=size;
         this.requiredTankSize=requiredTankSize;
+    }
+    public Fish()
+    {
+
     }
     public float size;
 
@@ -74,11 +75,11 @@ public class Fish {
         this.urls = urls;
     }
 
-    public WaterType getWaterType() {
+    public String getWaterType() {
         return waterType;
     }
 
-    public void setWaterType(WaterType waterType) {
+    public void setWaterType(String waterType) {
         this.waterType = waterType;
     }
 
@@ -92,7 +93,7 @@ public class Fish {
 
     private String scientificName;
     private ArrayList<String> urls;
-    private WaterType waterType;
+    private String waterType;
     private String description;
 
 }

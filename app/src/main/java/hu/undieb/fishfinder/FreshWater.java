@@ -43,12 +43,12 @@ public class FreshWater extends AppCompatActivity {
         fishesRecView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        adapter.setFishes((ArrayList<Fish>) Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType()==WaterType.FRESHWATER).collect(Collectors.toList()));
+        adapter.setFishes((ArrayList<Fish>) Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType().equals("FRESHWATER")).collect(Collectors.toList()));
     }
 
     private void freshWaterFishListFilteredByName(String name) {
             ArrayList<Fish> temp=new ArrayList<>();
-            for(Fish b: Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType()==WaterType.FRESHWATER).collect(Collectors.toList())){
+            for(Fish b: Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType().equals("FRESHWATER")).collect(Collectors.toList())){
                 if(b.getName().toLowerCase().contains(name.toLowerCase())){
                     temp.add(b);
                 }

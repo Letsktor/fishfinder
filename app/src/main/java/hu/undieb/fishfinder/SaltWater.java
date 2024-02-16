@@ -36,11 +36,11 @@ public class SaltWater extends AppCompatActivity {
             }
         });
         searchView.clearFocus();
-        adapter.setFishes((ArrayList<Fish>) Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType()==WaterType.SALTWATER).collect(Collectors.toList()));
+        adapter.setFishes((ArrayList<Fish>) Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType().equals("SALTWATER")).collect(Collectors.toList()));
     }
     private void saltWaterFishListFilteredByName(String name) {
         ArrayList<Fish> temp=new ArrayList<>();
-        for(Fish b: Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType()==WaterType.SALTWATER).collect(Collectors.toList())){
+        for(Fish b: Utils.getInstance().getAllFish().stream().filter(c->c.getWaterType().equals("SALTWATER")).collect(Collectors.toList())){
             if(b.getName().toLowerCase().contains(name.toLowerCase())){
                 temp.add(b);
             }
