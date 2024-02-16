@@ -50,8 +50,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if(item.getItemId()==R.id.nav_home) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-        }else if (item.getItemId()==R.id.nav_fish) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new YourFishes()).commit();
         } else if (item.getItemId()==R.id.nav_info) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new FragmentAbout()).commit();
         }

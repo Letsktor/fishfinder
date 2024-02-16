@@ -15,7 +15,7 @@ import com.bumptech.glide.Glide;
 
 public class FishView extends AppCompatActivity {
     public static final String FISH_ID_KEY="fishId";
-    public TextView txtCommonName, txtScintificName,txtShortDesc;
+    public TextView txtCommonName, txtScintificName,txtShortDesc,txtSize, txtTankSize;
     public ImageView imgFish,btnLeft,btnRight;
     public ProgressBar progressBar1,progressBar2,progressBar3;
     int imgcount=0;
@@ -156,6 +156,8 @@ public class FishView extends AppCompatActivity {
         txtCommonName.setText(fish.getName());
         txtScintificName.setText(fish.getScientificName());
         txtShortDesc.setText(fish.getDescription());
+        txtSize.setText(Float.toString(fish.getSize()));
+        txtTankSize.setText(Float.toString(fish.getRequiredTankSize()));
         Glide.with(this).asBitmap().load(fish.getUrls().get(imgcount)).into(imgFish);
     }
     private void initViews(){
@@ -168,6 +170,8 @@ public class FishView extends AppCompatActivity {
         imgFish=findViewById(R.id.imgFish);
         btnLeft=findViewById(R.id.imgButtonLeft);
         btnRight=findViewById(R.id.imgbuttonright);
+        txtSize=findViewById(R.id.txtFishSize);
+        txtTankSize=findViewById(R.id.txtTankSize);
     }
 
 }

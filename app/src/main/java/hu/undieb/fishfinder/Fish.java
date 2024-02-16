@@ -9,15 +9,35 @@ enum WaterType{
      SALTWATER
  }
 public class Fish {
-    public Fish(int id,String name,String scientificName,ArrayList<String> urls,WaterType waterType,String description) {
+    public Fish(int id,String name,String scientificName,ArrayList<String> urls,WaterType waterType,String description,float size, float requiredTankSize) {
         this.id = id;
         this.name = name;
         this.scientificName = scientificName;
         this.urls = urls;
         this.waterType = waterType;
         this.description = description;
+        this.size=size;
+        this.requiredTankSize=requiredTankSize;
+    }
+    public float size;
+
+    public float getSize() {
+        return size;
     }
 
+    public void setSize(float size) {
+        this.size = size;
+    }
+
+    public float getRequiredTankSize() {
+        return requiredTankSize;
+    }
+
+    public void setRequiredTankSize(float requiredTankSize) {
+        this.requiredTankSize = requiredTankSize;
+    }
+
+    public float requiredTankSize;
     private int id;
 
     public int getId() {
