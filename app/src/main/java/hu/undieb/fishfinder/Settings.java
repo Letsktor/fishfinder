@@ -22,6 +22,7 @@ public class Settings extends AppCompatActivity {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     boolean nightMode;
+    boolean isImperial;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,11 +35,11 @@ public class Settings extends AppCompatActivity {
         switchDarkMode=findViewById(R.id.switchDarkMode);
         sharedPreferences=getSharedPreferences("MODE", Context.MODE_PRIVATE);
         nightMode=sharedPreferences.getBoolean("nightMode",false);
+
         if(nightMode)
         {
             switchDarkMode.setChecked(true);
         }
-        switchImperialSystem=findViewById(R.id.switchImperialSystem);
         switchDarkMode.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -53,6 +54,28 @@ public class Settings extends AppCompatActivity {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     editor=sharedPreferences.edit();
                     editor.putBoolean("nightMode",true);
+                }
+                editor.apply();
+            }
+        });
+        switchImperialSystem=findViewById(R.id.switchImperialSystem);
+        isImperial=sharedPreferences.getBoolean("isImperial",false);
+        if(isImperial)
+        {
+            switchImperialSystem.setChecked(true);
+        }
+        switchImperialSystem.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isImperial)
+                {
+                    editor=sharedPreferences.edit();
+                    editor.putBoolean("isImperial",false);
+
+                }
+                else{
+                    editor=sharedPreferences.edit();
+                    editor.putBoolean("isImperial",true);
                 }
                 editor.apply();
             }

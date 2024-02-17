@@ -3,7 +3,9 @@ package hu.undieb.fishfinder;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -18,6 +20,8 @@ public class FishView extends AppCompatActivity {
     public TextView txtCommonName, txtScintificName,txtShortDesc,txtSize, txtTankSize;
     public ImageView imgFish,btnLeft,btnRight;
     public ProgressBar progressBar1,progressBar2,progressBar3;
+    public SharedPreferences sharedPreferences;
+    public boolean isImperial;
     int imgcount=0;
     @SuppressLint({"ClickableViewAccessibility", "NewApi"})
     @Override
@@ -27,7 +31,8 @@ public class FishView extends AppCompatActivity {
         Intent intent=getIntent();
         initViews();
         getActionBar();
-
+        sharedPreferences=getSharedPreferences("MODE", Context.MODE_PRIVATE);
+        isImperial=sharedPreferences.getBoolean("isImperial",false);
         if(null!=intent){
             int fishId=intent.getIntExtra(FISH_ID_KEY,-1);
             if(fishId!=-1){
@@ -156,8 +161,16 @@ public class FishView extends AppCompatActivity {
         txtCommonName.setText(fish.getName());
         txtScintificName.setText(fish.getScientificName());
         txtShortDesc.setText(fish.getDescription());
-        txtSize.setText(Float.toString(fish.getSize()));
-        txtTankSize.setText(Float.toString(fish.getRequiredTankSize()));
+        if (isImperial)
+        {
+            txtSize.setText(String.format("%.2f",fish.getSize()/(float)2.5)+" inch");
+            txtTankSize.setText(String.format("%.2f",fish.getRequiredTankSize()/(float)3.785)+" gallon");
+        }
+        else
+        {
+            txtSize.setText(Float.toString(fish.getSize())+" cm");
+            txtTankSize.setText(Float.toString(fish.getRequiredTankSize())+" l");
+        }
         Glide.with(this).asBitmap().load(fish.getUrls().get(imgcount)).into(imgFish);
     }
     private void initViews(){
