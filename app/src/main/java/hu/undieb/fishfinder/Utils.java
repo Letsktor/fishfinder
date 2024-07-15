@@ -15,6 +15,7 @@ public class Utils {
     private static Utils instance;
     private ArrayList<Fish> allFish;
     private DatabaseReference database=FirebaseDatabase.getInstance().getReference("Fishes");
+
     private Utils(){
         if(null==allFish){
             allFish= new ArrayList<>();

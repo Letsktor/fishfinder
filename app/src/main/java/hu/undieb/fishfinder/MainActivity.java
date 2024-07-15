@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     ImageButton imgButton;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     boolean nightMode;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imgButton=findViewById(R.id.img_button);
